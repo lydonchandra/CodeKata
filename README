@@ -1,0 +1,7 @@
+CodeKata1
+ 	Challenge:
+ 		* Obtained from Data Structures and Algorithm in Java, 5th Edition
+ 		* C-1.4 Write a short Java program that outputs all possible strings formed by using the characters c,a,r,b,o,n exactly once
+ 	Solution
+ 		1. Write methods to do permutation with recursion and without recursion, given an input of a List<Character>
+ 
