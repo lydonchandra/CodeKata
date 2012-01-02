@@ -24,38 +24,14 @@ public class CodeKata2 {
 		int min = 1;
 		int [] inSet = new int[max];
 		for( int i=0; i<max; i++) {
-//			inSet.add( i );
-			
 			// integers range from 1 to 54, 
 			// inSet[0] == i+1 == 0 + 1 = 1;
 			// inSet[1] == i+1 == 53 + 1 = 54;
 			inSet[i] = i+1;
 		}
 		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		codeKata2.printSet( codeKata2.shuffle(inSet) );
-		
-		
 	}
+
 
 	Random secureRandom = new SecureRandom();
 	
@@ -74,6 +50,7 @@ public class CodeKata2 {
 		
 		for( int i = inSet.length-1; i > 0; i-- ) {
 			
+			// j ← random integer with 0 ≤ j ≤ i
 			int j = secureRandom.nextInt(i+1); 
 			
 			// swap returnSet[i] and returnSet[j]
@@ -83,8 +60,8 @@ public class CodeKata2 {
 		}
 		return returnSet;
 	}
-	
 
+	
 	
 	public Set<Integer> shuffle (Set<Integer> inSet ) {
 		

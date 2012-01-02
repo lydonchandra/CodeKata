@@ -5,14 +5,59 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import com.google.caliper.SimpleBenchmark;
+
 /*
  * From Data Structures and Algorithm in Java, 5th Edition
  * C-1.4 Write a short Java program that outputs all possible strings formed by using the characters c,a,r,b,o,n exactly once
  */
 public class CodeKata1 {
 	
+	/**
+	 * How to run:
+	 * >> com.google.caliper.Runner ch.lydon.codekata.CodeKata1.CodeKata1Benchmark
+	 * @author lchandra
+	 *
+	 */
+	public static class CodeKata1Benchmark extends SimpleBenchmark {
+		
+		CodeKata1 codeKata1 = new CodeKata1();
+		
+		public void timePerm1Recursion(int reps) {
+			for( int i=0; i < reps; i++ ) {
+				// permutation of a simple string, results displayed on standard output
+				codeKata1.perm1Recursion("dona");
+			}
+		}
+		
+		
+		public void timePerm1ListRecursion(int reps) {
+			for( int i=0; i < reps; i++ ) {
+				List<String> stringList = new ArrayList<String>();
+				codeKata1.perm1ListRecursion("dona", stringList);
+			}
+		}
+		
+		
+		public void timePerm2ListRecursion(int reps) {
+			for( int i=0; i < reps; i++ ) {
+				List<List<Character>> charListList = new ArrayList<List<Character>>();
+				codeKata1.perm2ListRecursion(Arrays.asList('d','o', 'n', 'a'), charListList);
+			}
+		}
+		
+		
+		public void timePerm2NoRecursion(int reps) {
+			for( int i=0; i < reps; i++ ) {
+				List<List<Character>> charListList = new ArrayList<List<Character>>();
+				codeKata1.permNoRecursion(Arrays.asList('d','o', 'n', 'a'), charListList);
+			}
+		}
+	}
+	
 	public static void main(String [] args) {
 		
+			
 		CodeKata1 codeKata1 = new CodeKata1();
 		
 		// permutation of a simple string, results displayed on standard output

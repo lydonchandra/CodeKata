@@ -2,11 +2,34 @@ CodeKata1
  	Challenge:
  		* Obtained from Data Structures and Algorithm in Java, 5th Edition
  		* C-1.4 Write a short Java program that outputs all possible strings formed by using the characters c,a,r,b,o,n exactly once
+
  	Solution
  		1. Write methods to do permutation with recursion and without recursion, given an input of a List<Character>
- 
- 
- CodeKata
+
+ 	Performance (Measured using Google's Caliper) 
+		0% Scenario{vm=java, trial=0, benchmark=Perm1Recursion} 170420.87 ns; ?=11080.58 ns @ 10 trials
+		25% Scenario{vm=java, trial=0, benchmark=Perm1ListRecursion} 172344.71 ns; ?=12029.82 ns @ 10 trials
+		50% Scenario{vm=java, trial=0, benchmark=Perm2ListRecursion} 51937.87 ns; ?=21.11 ns @ 3 trials
+		75% Scenario{vm=java, trial=0, benchmark=Perm2NoRecursion} 6099.01 ns; ?=6.08 ns @ 3 trials
+		
+		         benchmark     us linear runtime
+		    Perm1Recursion 170.42 =============================
+		Perm1ListRecursion 172.34 ==============================
+		Perm2ListRecursion  51.94 =========
+		  Perm2NoRecursion   6.10 =
+
+		vm: java
+		trial: 0
+		
+		Note: benchmarks printed 23170464 characters to System.out and 0 characters to System.err. Use --debug to see this output.
+ 	
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 	
+
+
+
+CodeKata2
  	Challenge:
 		* C-1.3 Write a Java method that takes an array containing the set of all integers in the range 1 to 54 and 
  		* shuffles it into random order. Your method should output each possible order with equal opportunity
