@@ -1,5 +1,7 @@
 package ch.lydon.codekata;
 
+import java.math.BigInteger;
+import java.nio.ByteBuffer;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Random;
@@ -32,12 +34,34 @@ public class CodeKata2 {
 		codeKata2.printSet( codeKata2.shuffle(inSet) );
 	}
 
+	
+	public CodeKata2 () {
+		final int SEED_SIZE = 2 * 4096;
+		
+		byte seed [] = new byte[SEED_SIZE];
+		
+		// using anoter random gen to create seed
+		SecureRandom tempRandom = new SecureRandom( );
+		
+		// bitCount  = 8 * 2 * 4096 == 65537
+		BigInteger biginteger = new BigInteger( 8 * SEED_SIZE, tempRandom );
+		String bigintstr = biginteger.toString();
 
-	Random secureRandom = new SecureRandom();
+		// an example using ByteBuffer to convert long into byte array
+		//byte time1byte[] =  ByteBuffer.allocate(SEED_SIZE).putLong(time1).array();
+		  
+		// seed has 8192 bits
+		seed = biginteger.toByteArray();
+		
+		secureRandom = new SecureRandom (seed);
+	}
+	 
+
+	Random secureRandom = new SecureRandom( );
 	
 	
 	/**
-	 * http://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+	 * http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
 	 * 
 	 * To shuffle an array a of n elements (indices 0..n-1):
 	 *		for i from n − 1 downto 1 do
