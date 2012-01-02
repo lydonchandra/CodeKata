@@ -33,6 +33,27 @@ public class CodeKata2 {
 		}
 		codeKata2.printSet( codeKata2.shuffle(inSet) );
 		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		codeKata2.printSet( codeKata2.shuffle(inSet) );
+		
 		
 	}
 
@@ -53,7 +74,7 @@ public class CodeKata2 {
 		
 		for( int i = inSet.length-1; i > 0; i-- ) {
 			
-			int j = secureRandom.nextInt(inSet.length); 
+			int j = secureRandom.nextInt(i+1); 
 			
 			// swap returnSet[i] and returnSet[j]
 			int temp = returnSet[i];
